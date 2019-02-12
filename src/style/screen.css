@@ -1,0 +1,125 @@
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+:root {
+    --color-alpha : #de4831 ;
+    --color-beta: #e1decb;
+    --color-dark: #221e21;
+    --gutter: 24px;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+body,
+html{
+    /* Positioning */
+    /* Box model */
+    /* Fonts */
+    font-family: "Sarabun", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    /* Appearance */
+    /* Other styles */
+}
+
+/*------------------------------------*\
+#Objects
+\*------------------------------------*/
+
+.o-grid{
+    display: grid;
+    gap: calc(var(--gutter)*2);
+}
+
+/*------------------------------------*\
+#Components
+\*------------------------------------*/
+
+/* Sidebar */
+
+.c-sidebar{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: var(--gutter);
+    background: var(--color-beta);
+    overflow-x: auto;
+}
+
+.c-sidebar-header{
+    display: flex;
+    align-items: center;
+}
+.c-sidebar-header__image{
+    max-height: var(--gutter);
+
+}
+.c-sidebar-header__title{
+    margin-left: calc(var(--gutter)/2);
+    font-size: 1rem; /*relative tot the body's font-size*/
+}
+
+.c-sidebar-menu{}
+
+.c-sidebar-counter{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Menu */
+
+.c-menu__title{
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    opacity: .7;
+}
+
+.c-menu__list{
+    list-style: none;
+    margin: 0 0 calc(var(--gutter)*3);
+    padding: 0;
+}
+
+.c-menu__item{}
+
+.c-menu__link{
+    all: unset;
+    color: var(--color-alpha);
+    /* letter-spacing: 1px; */
+    font-size: 0.95rem;
+    font-weight: 600;
+    will-change: opacity;
+    transition: opacity 200ms ease-out;
+    opacity: .7;
+    cursor: pointer;
+}
+
+.c-menu__link:hover{
+    opacity: 1;
+}
+
+/* Content */
+
+.c-content{
+    height: 100vh;
+    overflow-x: auto;
+}
+
+/*------------------------------------*\
+#Utilities
+\*------------------------------------*/
+
+.u-grid-main-layout{
+    min-height: 100vh;
+    grid-template-columns: 350px 1fr;
+}
+
+.u-color-alpha{
+    color: var(--color-alpha);
+}
