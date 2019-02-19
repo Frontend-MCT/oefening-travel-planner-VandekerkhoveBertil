@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <!-- Meta data -->
     <meta charset="utf-8" />
@@ -16,6 +17,7 @@
     <!-- Scripts -->
     <script src="script/app.js"></script>
 </head>
+
 <body>
     <div class="o-grid u-grid-main-layout">
         <aside class="c-sidebar">
@@ -27,19 +29,19 @@
                 <h4 class="c-menu__title">Choose a region:</h4>
                 <ul class="c-menu__list">
                     <li class="c-menu__item">
-                        <button class="c-menu__link">Africa</button>
+                        <button class="c-menu__link js-region-select" data-region="africa">Africa</button>
                     </li>
                     <li class="c-menu__item">
-                        <button class="c-menu__link">Americas</button>
+                        <button class="c-menu__link js-region-select" data-region="americas">Americas</button>
                     </li>
                     <li class="c-menu__item">
-                        <button class="c-menu__link">Asia</button>
+                        <button class="c-menu__link js-region-select" data-region="asia">Asia</button>
                     </li>
                     <li class="c-menu__item">
-                        <button class="c-menu__link">Europe</button>
+                        <button class="c-menu__link js-region-select" data-region="europe">Europe</button>
                     </li>
                     <li class="c-menu__item">
-                        <button class="c-menu__link">Oceania</button>
+                        <button class="c-menu__link js-region-select" data-region="oceania">Oceania</button>
                     </li>
                 </ul>
             </nav>
@@ -47,9 +49,29 @@
                 <span class="u-color-alpha js-amount">18 </span>/ 250
             </div>
         </aside>
-        <main class="c-content js-country-holder">
-            
+        <main class="c-content">
+            <div class="o-grid u-grid-overview js-country-holder">
+            </div>
+            <aside class="c-notifications js-notification-holder">
+                <div class="c-notification">
+                    <h2 class="c-notification__header">
+                        You have selected Belgium.
+                    </h2>
+                    <button class="c-notification__action">
+                        Undo
+                    </button>
+                </div>
+                <div class="c-notification">
+                        <h2 class="c-notification__header">
+                            You have selected Netherlands.
+                        </h2>
+                        <button class="c-notification__action">
+                            Undo
+                        </button>
+                    </div>
+            </aside>
         </main>
     </div>
 </body>
+
 </html>
