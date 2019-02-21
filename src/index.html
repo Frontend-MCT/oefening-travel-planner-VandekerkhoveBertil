@@ -20,7 +20,19 @@
 
 <body>
     <div class="o-grid u-grid-main-layout">
+        <div class="c-mobile__header">
+            <button class="o-button-reset c-nav-open js-open-nav">
+                <svg class="c-nav-open__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                </svg>
+            </button>
+        </div>
         <aside class="c-sidebar">
+            <button class="o-button-reset c-nav-close js-close-nav">
+                <svg class="c-nav-close__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                </svg>
+            </button>
             <header class="c-sidebar-header">
                 <img src="favicon-32.png" alt="Important for SEO!" title="Hover me!" class="c-sidebar-header__image">
                 <h1 class="c-sidebar-header__title">Travel Planner</h1>
@@ -46,7 +58,10 @@
                 </ul>
             </nav>
             <div class="c-sidebar-counter">
-                <span class="u-color-alpha js-amount">18 </span>/ 250
+                <span class="u-color-alpha js-amount">18 </span>/ 250 <br>
+                <button class="c-sidebar-counter__reset js-reset o-button-reset">
+                    Reset countries!
+                </button>
             </div>
         </aside>
         <main class="c-content">

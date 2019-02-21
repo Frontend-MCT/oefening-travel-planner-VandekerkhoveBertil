@@ -1,5 +1,13 @@
-let countryHolder, amountHolder, notificationHolder;
+let countryHolder, amountHolder, notificationHolder, sideBarHolder;
 const localKey = 'travel-planner';
+
+const closeNav = () => {
+    sideBarHolder.classList.remove('c-sidebar--mobile');    
+}
+
+const openNav = () => {
+    sideBarHolder.classList.add('c-sidebar--mobile');      
+}
 
 const hasItem = key => {
     // de tilde zet het om in een bit, true of false
@@ -17,6 +25,15 @@ const removeItem = key => {
     countries.splice(countries.indexOf(key),1);
     localStorage.setItem(localKey, JSON.stringify(countries));
 }; // void / (true || false)?
+
+const removeAllItems = () => {
+    localStorage.removeItem(localKey);
+    updateCounter();
+    let countries = document.querySelectorAll('.c-country-input');
+    for (const country of countries) {
+        country.checked = false;
+    }
+}
 
 const getAllItems = () => {
     return JSON.parse(localStorage.getItem(localKey)) || [];
@@ -123,7 +140,22 @@ const enableListeners = () => {
     countryHolder = document.querySelector('.js-country-holder');
     amountHolder = document.querySelector('.js-amount');
     notificationHolder = document.querySelector('.js-notification-holder');
+    sideBarHolder = document.querySelector('.c-sidebar');
 
+    let mobile_nav_open = document.querySelector('.js-open-nav');
+    mobile_nav_open.addEventListener('click', function(){
+        openNav();
+    })
+
+    let mobile_nav_close = document.querySelector('.js-close-nav');
+    mobile_nav_close.addEventListener('click', function(){
+        closeNav();
+    })
+
+    let reset_button = document.querySelector('.js-reset');
+    reset_button.addEventListener('click', function(){
+        removeAllItems();        
+    })
 
     // Always start with Europe. 
     fetchCountries('europe');

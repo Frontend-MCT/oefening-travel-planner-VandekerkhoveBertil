@@ -45,6 +45,25 @@ html {
     border: 0;
 }
 
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
 /*------------------------------------*\
 #Components
 \*------------------------------------*/
@@ -60,6 +79,19 @@ html {
     padding: var(--gutter);
     background: var(--color-beta);
     overflow-x: auto;
+}
+
+@media (max-width:550px){
+    .c-sidebar{
+        z-index: 100;
+        transform: translateX(-100%);
+        transition: 1s;
+    }
+}
+
+.c-sidebar--mobile {
+    transform: translateX(0) !important;
+    transition: 1s;
 }
 
 .c-sidebar-header {
@@ -83,6 +115,19 @@ html {
 .c-sidebar-counter {
     font-size: 1rem;
     font-weight: 600;
+}
+
+.c-sidebar-counter__reset{
+    color: var(--color-alpha);
+    font-size: 0.95rem;
+    font-weight: 600;
+    will-change: opacity;
+    transition: opacity 200ms ease-out;
+    opacity: .7;
+}
+
+.c-sidebar-counter__reset:hover {
+    opacity: 1;
 }
 
 /* Menu */
@@ -127,11 +172,27 @@ html {
     overflow-x: auto;
 }
 
+@media (max-width:550px){
+    .c-content{
+        padding: calc(var(--gutter)*3) 0 0 0;
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        width: 100vw;
+    }
+}
+
 /* Country */
 
 .c-country {
     display: block;
     opacity: 1;
+}
+
+@media (max-width:550px){
+    .c-country{
+        margin: 0 0 0 calc(var(--gutter)*2);
+    }
 }
 
 .c-country-input:checked+.c-country {
@@ -167,6 +228,12 @@ html {
     bottom: 0;
     right: calc(var(--gutter)*2);
     width: 300px;
+}
+
+@media(max-width:550px){
+    .c-notifications{
+        position: fixed;
+    }
 }
 
 .c-notification {
@@ -205,13 +272,67 @@ html {
     opacity: 1;
 }
 
+/* Mobile header */
+
+.c-mobile__header{
+    display: none;
+    position: absolute;
+    top: 0;
+    left:0;
+    background: var(--color-beta);
+    height: 50px;
+    width: 100vw;
+    box-shadow: 1px 1px 2px 1px rgba(30, 30, 30, .1);
+    z-index: 100;
+}
+
+@media (max-width:550px){
+    .c-mobile__header{
+        display: block;
+    }
+}
+
+.c-nav-open {
+    position: absolute;
+    top: 25%;
+    left: 4%;
+    width: 24px;
+    height: 24px;
+}
+
+.c-nav-open__svg {
+    fill: #202024;
+    height: 100%;
+}
+
+.c-nav-close{
+    display: none;
+}
+
+@media (max-width:550px){
+    .c-nav-close {
+        display: block;
+        position: absolute;
+        top: 1.5%;
+        right: 4%;
+        width: 24px;
+        height: 24px;
+    }
+    
+    .c-nav-close__svg {
+        fill: #202024;
+        height: 100%;
+    }
+}
+
+
 /*------------------------------------*\
 #Utilities
 \*------------------------------------*/
 
 .u-grid-main-layout {
     min-height: 100vh;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 250px 1fr;
 }
 
 .u-grid-overview {
