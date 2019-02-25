@@ -2,11 +2,11 @@ let countryHolder, amountHolder, notificationHolder, sideBarHolder;
 const localKey = 'travel-planner';
 
 const closeNav = () => {
-    sideBarHolder.classList.remove('c-sidebar--mobile');    
+    sideBarHolder.classList.remove('c-sidebar--mobile');
 }
 
 const openNav = () => {
-    sideBarHolder.classList.add('c-sidebar--mobile');      
+    sideBarHolder.classList.add('c-sidebar--mobile');
 }
 
 const hasItem = key => {
@@ -22,7 +22,7 @@ const addItem = key => {
 
 const removeItem = key => {
     let countries = getAllItems();
-    countries.splice(countries.indexOf(key),1);
+    countries.splice(countries.indexOf(key), 1);
     localStorage.setItem(localKey, JSON.stringify(countries));
 }; // void / (true || false)?
 
@@ -49,7 +49,7 @@ const updateCounter = () => {
 
 const fadeAndRemoveNotification = (notification) => {
     notification.classList.add('u-fade-out');
-    notification.addEventListener('transitionend', function(){
+    notification.addEventListener('transitionend', function () {
         notificationHolder.removeChild(notification);
     })
 
@@ -60,7 +60,7 @@ const fadeAndRemoveNotification = (notification) => {
     // },800);
 };
 
-const showNotification = (element) => {    
+const showNotification = (element) => {
     // 1 Show in js-notification-holder
     let notification = document.createElement('div');
     notification.classList.add('c-notification');
@@ -75,7 +75,7 @@ const showNotification = (element) => {
     // 2 fade out after 800ms
     setTimeout(() => {
         fadeAndRemoveNotification(notification);
-    },1500);
+    }, 1500);
 };
 
 const addListenersToCountries = function (classSelector) {
@@ -101,7 +101,8 @@ const showCountries = data => {
         // #2 Build an HTML-string for each country
         countries += `
             <article>
-                <input id="${country.cioc}-${country.alpha2Code}" class="o-hide c-country-input" type="checkbox" ${hasItem(country.cioc + '-' + country.alpha2Code) ? 'checked="checked"' : ''} />
+                <input id="${country.cioc}-${country.alpha2Code}" class="o-hide c-country-input" type="checkbox" ${
+                    hasItem(country.cioc + '-' + country.alpha2Code) ? 'checked="checked"' : ''} />
                 <label for="${country.cioc}-${country.alpha2Code}" class="c-country js-country" data-country-name="${country.name}">
                     <div class="c-country-header">
                         <h2 class="c-country-header__name">${country.name}</h2>
@@ -143,18 +144,18 @@ const enableListeners = () => {
     sideBarHolder = document.querySelector('.c-sidebar');
 
     let mobile_nav_open = document.querySelector('.js-open-nav');
-    mobile_nav_open.addEventListener('click', function(){
+    mobile_nav_open.addEventListener('click', function () {
         openNav();
     })
 
     let mobile_nav_close = document.querySelector('.js-close-nav');
-    mobile_nav_close.addEventListener('click', function(){
+    mobile_nav_close.addEventListener('click', function () {
         closeNav();
     })
 
     let reset_button = document.querySelector('.js-reset');
-    reset_button.addEventListener('click', function(){
-        removeAllItems();        
+    reset_button.addEventListener('click', function () {
+        removeAllItems();
     })
 
     // Always start with Europe. 

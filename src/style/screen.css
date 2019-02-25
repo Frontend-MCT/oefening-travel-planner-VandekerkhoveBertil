@@ -81,8 +81,8 @@ html {
     overflow-x: auto;
 }
 
-@media (max-width:550px){
-    .c-sidebar{
+@media (max-width:550px) {
+    .c-sidebar {
         z-index: 100;
         transform: translateX(-100%);
         transition: 1s;
@@ -117,7 +117,7 @@ html {
     font-weight: 600;
 }
 
-.c-sidebar-counter__reset{
+.c-sidebar-counter__reset {
     color: var(--color-alpha);
     font-size: 0.95rem;
     font-weight: 600;
@@ -157,6 +157,7 @@ html {
     transition: opacity 200ms ease-out;
     opacity: .7;
     cursor: pointer;
+    justify-content: flex-start;
 }
 
 .c-menu__link:hover {
@@ -172,8 +173,8 @@ html {
     overflow-x: auto;
 }
 
-@media (max-width:550px){
-    .c-content{
+@media (max-width:550px) {
+    .c-content {
         padding: calc(var(--gutter)*3) 0 0 0;
         position: absolute;
         left: 0%;
@@ -189,8 +190,8 @@ html {
     opacity: 1;
 }
 
-@media (max-width:550px){
-    .c-country{
+@media (max-width:550px) {
+    .c-country {
         margin: 0 0 0 calc(var(--gutter)*2);
     }
 }
@@ -223,15 +224,15 @@ html {
 
 /* Notifications */
 
-.c-notifications  {
+.c-notifications {
     position: absolute;
     bottom: 0;
     right: calc(var(--gutter)*2);
     width: 300px;
 }
 
-@media(max-width:550px){
-    .c-notifications{
+@media(max-width:550px) {
+    .c-notifications {
         position: fixed;
     }
 }
@@ -248,12 +249,12 @@ html {
     transition: opacity 800ms ease-in-out;
 }
 
-.c-notification__header{
+.c-notification__header {
     margin: 0;
     font-size: 1.1rem;
 }
 
-.c-notification__action{
+.c-notification__action {
     all: unset;
 
     font-size: 0.9rem;
@@ -268,17 +269,17 @@ html {
     transition: opacity 200ms ease-out;
 }
 
-.c-notification__action:hover{
+.c-notification__action:hover {
     opacity: 1;
 }
 
 /* Mobile header */
 
-.c-mobile__header{
+.c-mobile__header {
     display: none;
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     background: var(--color-beta);
     height: 50px;
     width: 100vw;
@@ -286,8 +287,8 @@ html {
     z-index: 100;
 }
 
-@media (max-width:550px){
-    .c-mobile__header{
+@media (max-width:550px) {
+    .c-mobile__header {
         display: block;
     }
 }
@@ -305,11 +306,11 @@ html {
     height: 100%;
 }
 
-.c-nav-close{
+.c-nav-close {
     display: none;
 }
 
-@media (max-width:550px){
+@media (max-width:550px) {
     .c-nav-close {
         display: block;
         position: absolute;
@@ -318,7 +319,7 @@ html {
         width: 24px;
         height: 24px;
     }
-    
+
     .c-nav-close__svg {
         fill: #202024;
         height: 100%;
@@ -343,6 +344,6 @@ html {
     color: var(--color-alpha);
 }
 
-.u-fade-out{
+.u-fade-out {
     opacity: 0;
 }
